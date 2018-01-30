@@ -1,0 +1,448 @@
+<div class="col-12" style="width:400px; margin:0 auto;">
+    <h1>Hi {{username}}</h1>
+    <p>You're logged in !!</p>
+    
+    
+    <p><a [routerLink]="['/login']" (click)="logout()">Logout</a></p>
+</div>
+<div class="body ">
+
+    <div class="container">
+        <div class="cover-div" id="cover-div"></div>
+        <!-- verify phone number modal -->
+        <div class="first-div" id="first-div">
+
+            <div class="product-content">
+                <div style="overflow: hidden;">
+                    <div class="col-md-12" style="padding: 0; ">
+                        <div class="modaltop" style="padding: 0;">
+                            <div class="row" style="padding-top: 5px;width:95%;text-align: center;margin:0 auto;">
+                                <div class="col-sm col-9" style="text-align:left; padding-left: 0px;">
+                                    <div class="title-head">PREDICT & WIN</div>
+                                </div>
+                                <div class="col-sm col-3" style="text-align:right;  padding-right: 0px;">
+                                    <div class="modal-close">
+                                        <span (click)="closeModal1()">
+                                            <img src="assets/images/close.png" alt="" width="30px" height="30px">
+                                            </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modalbody1" style="padding:0;  padding-bottom: 10px;">
+                            <div style="padding-top: 4px;">
+                                <img src="{{con_photo}}" alt="" width="100px" height="100px">
+                            </div>
+                            <div *ngIf="errormessage" style="color:red">
+                                Please Make sure Phone Number is 11 digits
+                            </div>
+                            <div *ngIf="!errormessage">
+
+                            </div>
+                            <div *ngIf="errormessagemail" style="color:red">
+                                Please Make sure Email was entered correctly
+                            </div>
+                            <div *ngIf="!errormessagemail">
+
+                            </div>
+                            <!--<div *ngIf="incorrectnumber" style="color:red">
+                                {{displayerrormessage}}
+                            </div>
+                            <div *ngIf="!incorrectnumber">
+
+                            </div>-->
+                            <div *ngIf="enteremail" style="color:red">
+                                Please enter email address
+                            </div>
+                            <div *ngIf="!enteremail">
+
+                            </div>
+                            <div *ngIf="voteserror" style="color:red">
+                                Please enter number of predictions
+                            </div>
+                            <div *ngIf="!voteserror">
+
+                            </div>
+
+                            <div style="color:red">
+                                {{displayerrormessage}}
+                            </div>
+                            <div class="contain">
+
+                                <div class="row" style="width: 100%; margin: 0 auto; padding-bottom: 10px;">
+                                    <div class="col-4 middle" style="font-size: 12px; background-color: #707070; color: ghostwhite; padding-left:3px;padding-right:0px; padding-top:11.5px; height:40px;">CONTESTANT ID</div>
+                                    <div class="col-8" style="font-size: 12px; background-color: #252525; color: ghostwhite; padding-left:3px;padding-right:0px; height:40px;">
+                                        <input #conid class="middle" style="width:100%;height:40px;background-color: #252525; color: ghostwhite; border:0px" type="text"
+                                            value="{{con_code}}" readonly></div>
+
+                                </div>
+                                <div class="row" style="width: 100%; margin: 0 auto; padding-bottom: 10px;">
+                                    <div class="col-4 middle" style="font-size: 12px; background-color: #707070; color: ghostwhite; padding-left:3px;padding-right:0px; padding-top:11.5px; height:40px;">EMAIL ADDRESS</div>
+                                    <div class="col-8" style="font-size: 12px; background-color: #252525; color: ghostwhite; padding-left:3px;padding-right:0px; height:40px;">
+                                        <input #email class="middle" style="width:100%; height:40px; background-color: #252525; color: ghostwhite; border:0px" type="text"
+                                            placeholder="Enter your email" [(ngModel)]="payStackForm.email" email pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                                            required></div>
+
+                                </div>
+                                <div class="row" style="width: 100%; margin: 0 auto; padding-bottom: 10px;">
+                                    <div class="col-4 middle" style="font-size: 12px; background-color: #707070; color: ghostwhite; padding-left:3px;padding-right:0px; padding-top:11.5px; height:40px;">PHONE NUMBER</div>
+                                    <div class="col-8" style="font-size: 12px; background-color: #252525; color: ghostwhite; padding-left:3px;padding-right:0px; height:40px;">
+                                        <input #number class="middle" maxlength="11" pattern=".{5,11}" [(ngModel)]="payStackForm.phone" placeholder="(e.g. 080xxxxxxxx )"
+                                            style="width:100%; height:40px; background-color: #252525; color: ghostwhite; border:0px;"
+                                            type="text"></div>
+
+                                </div>
+                                <div class="row" style="width: 100%; margin: 0 auto; padding-bottom: 10px;">
+
+                                    <div class="col-4 middle" style="font-size: 12px; background-color: #707070; color: ghostwhite; padding-left:3px;padding-right:0px; padding-top:11.5px; height:40px;">NUMBER OF PREDICTIONS</div>
+
+                                    <div class="col-8" style="font-size: 12px; background-color: #252525; color: ghostwhite; padding-left:3px;padding-right:0px; height:40px;">
+                                        <input #times class="middle" [(ngModel)]="total" style="width:100%; height:40px; background-color: #252525; color: ghostwhite; border:0px;"
+                                            type="number"></div>
+
+                                </div>
+                                <div style="color:greenyellow">You will be charged {{total * 50}} Naira for this prediction</div>
+                                <div class="contain-bottom">
+                                    <button type="button" class="btn btn-secondary buttoner rounded-0  " (click)="checkNumber(conid, number, times, email)">NEXT</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- verify code modal -->
+        <div class="second-div" id="second-div">
+
+            <div class="product-content">
+                <div style="overflow: hidden;">
+                    <div class="col-md-12" style="padding: 0; ">
+                        <div class="modaltop" style="padding: 0;">
+                            <div class="row" style="padding-top: 5px;width:95%;text-align: center;margin:0 auto;">
+                                <div class="col-sm col-9" style="text-align:left; padding-left: 0px;">
+                                    <div class="title-head">PREDICT & WIN</div>
+                                </div>
+                                <div class="col-sm col-3" style="text-align:right;  padding-right: 0px;">
+                                    <div class="modal-close">
+                                        <span (click)="closeModal2()">
+                <img src="assets/images/close.png" alt="" width="30px" height="30px">
+                </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="modalbody2" style="padding:0;  padding-bottom: 10px; ">
+
+                            <div class="contain">
+                                <div style="font-size:13px; padding-top:20px"> An OTP will be sent to this number {{resendnum}}. Not Correct?
+                                    <a onmouseover="" style="color:lawngreen; cursor: pointer;" (click)="numberagain()">click here.</a><br>                                    If you don't receive your OTP within 5 minutes,
+                                    <a onmouseover="" style="color:lawngreen; cursor: pointer;" (click)="resendOtp()">Resend OTP.</a>
+                                </div>
+                                <div style="color:red">
+                                    {{displayotperrormessage}}
+                                </div>
+                                <div *ngIf="otperror" style="color:red">
+                                    Please ensure OTP code is 4 digits.
+                                </div>
+                                <div *ngIf="!otperror">
+
+                                </div>
+                                <div *ngIf="!isPaystack">
+                                    <div class="row" style="width: 100%; margin: 0 auto; padding-bottom: 10px;">
+                                        <div class="col-3 middle" style="font-size: 12px; background-color: #707070; color: ghostwhite; padding-left:3px;padding-right:0px; padding-top:11.5px; height:40px;">OTP CODE</div>
+                                        <div class="col-6" style="font-size: 12px; background-color: #252525; color: ghostwhite; padding-left:3px;padding-right:0px; height:40px;">
+
+                                            <input #code class="middle" maxlength="4" style="width:100%; height:40px; background-color: #252525; color: ghostwhite; border:0px;"
+                                                type="text">
+                                        </div>
+
+                                        <div class="col-3 middle" style="font-size: 12px; background-color: #707070; color: ghostwhite; padding-left:3px;padding-right:0px; padding-top:11.5px; height:40px;">
+                                            <div *ngIf="!timerup">
+                                                <span id="time">00:00</span>
+                                            </div>
+                                            <div *ngIf="timerup">
+                                                00:00
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contain-bottom">
+                                        <button type="button" class="btn btn-secondary buttoners rounded-0" (click)="verifyCode(num, code, conid, times)">Next</button>
+                                    </div>
+                                </div>
+                                <div *ngIf="isPaystack">
+                                    <div class="row" style="width: 100%; margin: 0 auto; padding-bottom: 10px;">
+                                        <div class="col-3 middle" style="font-size: 12px; background-color: #707070; color: ghostwhite; padding-left:3px;padding-right:0px; padding-top:11.5px; height:40px;"></div>
+                                        <div class="col-6" style="font-size: 12px; background-color: #252525; color: ghostwhite; padding-left:3px;padding-right:0px; height:40px;">
+
+                                            <input #code class="middle" maxlength="4" style="text-align:center; width:100%; height:40px; background-color: #252525; color: green; border:0px;"
+                                                type="text" value="OTP CONFIRMED!" readonly>
+                                        </div>
+                                        <div class="col-3 middle" style="font-size: 12px; background-color: #707070; color: ghostwhite; padding-left:3px;padding-right:0px; padding-top:11.5px; height:40px;">
+                                            00:00
+                                        </div>
+                                    </div>
+                                    <div class="contain-bottom">
+                                      <button class="btn btn-primary" (click)="doPaystack()"> Pay with a Nigerian Card </button>
+                                      <br/>
+                                      <!--<form ngNoForm method="post" action="{{dusupayUrl}}" target="_blank" #form>
+                                        <input type="hidden" name="dusupay_merchantId" value="{{dusuForm.merchantId}}" required>
+                                        <input type="hidden" name="dusupay_amount" value="{{dusuForm.amount}}" optional>
+                                        <input type="hidden" name="dusupay_currency" value="{{dusuForm.currency}}" required>
+                                        <input type="hidden" name="dusupay_itemId" value="{{dusuForm.itemId}}" required>
+                                        <input type="hidden" name="dusupay_itemName" value="{{dusuForm.itemName}}" required>
+                                        <input type="hidden" name="dusupay_transactionReference" value="{{dusuForm.transactionReference}}" required>
+                                        <input type="hidden" name="dusupay_redirectURL" value="{{payStackForm.dusupayUrl}}" optional>
+                                        <input type="hidden" name="dusupay_successURL" value="" optional>-->
+                                        <!--<input type="hidden" name="dusupay_logo" value="" optional>-->
+                                        <!--<input type="hidden" name="dusupay_hash" value="hashValue..." required>-->
+                                        <!--<button type="submit" name="submit" onclick="submit()" class="btn btn-default"> Pay from other Country</button>
+                                      </form>-->
+                                           <!-- <div id="dusupay-btn" attr.dusupay_merchantId="{{dusuMerchantId}}" attr.dusupay_amount="{{payStackForm.amount}}" dusupay_currency="NGN"
+                                                dusupay_itemId="BBNTrivia" dusupay_itemName="BBN Trivia" attr.dusupay_transactionReference="{{dusuRef}}"
+                                                dusupay_render="widget" dusupay_redirectURL="" dusupay_successURL="" dusupay_environment="sandbox"
+                                                onclick="dusupaysetbtn()">
+                                                <a href="javascript:;"><br>
+                                                    <img src="https://dusupay.com/img/paybuttons/dusupaybtn6.png" /></a>
+                                          </div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="contain-bottom">
+
+                                <div *ngIf="!isPaystack">
+
+                                </div>
+                                <div *ngIf="isPaystack">
+                                    <angular4-paystack [key]=pk [email]=payStackForm.email [amount]=payStackForm.amount [ref]="payStackForm.ref" [class]="'btn btn-primary'"
+                                        (close)="paymentCancel()" (callback)="paymentDone($event)">Use your Nigerian Card</angular4-paystack>
+
+                                    <br/>
+                                  <div id="dusupay-btn" attr.dusupay_merchantId="{{dusuMerchantId}}"
+                                       attr.dusupay_amount="{{payStackForm.amount}}"
+                                       dusupay_currency="NGN"
+                                       dusupay_itemId="BBNTrivia"
+                                       dusupay_itemName="BBN Trivia"
+                                       attr.dusupay_transactionReference= "{{dusuRef}}"
+                                       dusupay_render="widget"
+                                       dusupay_redirectURL=""
+                                       dusupay_successURL=""
+                                       dusupay_environment="sandbox" onclick="dusupaysetbtn()">
+                                    <a href="javascript:;"><br>
+                                      <img src="https://dusupay.com/img/paybuttons/dusupaybtn6.png" /></a>
+                                  </div>
+                                </div>
+
+                            </div>
+                        </div>-->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--</div>
+    </div>-->
+    </div>
+
+    <!-- payment success modal -->
+    <div class="third-div" id="third-div">
+        <!--<div class="modal-close">
+                <span onclick="closeModal3()">
+                <i class="fa fa-times fa-2x"></i>
+                </span>
+            </div>-->
+        <div class="product-content">
+            <div style="overflow: hidden;">
+                <div class="col-md-12" style="padding: 0; ">
+                    <div class="modaltop" style="padding: 0;">
+                        <div class="row" style="padding-top: 5px;width:95%;text-align: center;margin:0 auto;">
+                            <div class="col-sm col-9" style="text-align:left; padding-left: 0px;">
+                                <div class="title-heads">PREDICTION SUBMITTED</div>
+                            </div>
+                            <div class="col-sm col-3" style="text-align:right;  padding-right: 0px;">
+                                <div class="modal-close">
+                                    <span (click)="closeModal3();">
+                <img src="assets/images/close.png" alt="" width="30px" height="30px">
+                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="modalbody4" style="padding:0;  padding-bottom: 10px;">
+                        <div class="contain">
+                            I just participated in the BBN Trivia. What are you waiting for?<br> Stand a chance to win up
+                            to NGN 1 million weekly.<br> Participate Now!!!<br>
+                            <!--<br> SHARE: <a href="#" ceiboShare [facebook]="{u: repoUrl}"><i class="fa fa-facebook-square fa-2x"></i></a> -->
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.bbntrivias.com/" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>                           &nbsp;&nbsp;
+                            <a href="https://twitter.com/home?status=I%20just%20participated%20in%20the%20BBN%20Trivia.%20What%20are%20you%20waiting%20for?%20Stand%20a%20chance%20to%20win%20up%20to%20NGN%201%20million%20weekly.%20Participate%20Now!!!%0Ahttps%3A//www.bbntrivias.com/" target="_blank"><i  class="fa fa-twitter-square fa-2x" ></i></a>&nbsp;&nbsp;
+
+                        </div>
+                        <div class="contain-bottom">
+                            <button type="button" class="btn btn-secondary buttoners rounded-0" onclick="closeModal3()">CLOSE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- error modal modal -->
+    <div class="error-div" id="error-div">
+
+        <div class="product-content">
+            <div style="overflow: hidden;">
+                <div class="col-md-12" style="padding: 0; ">
+                    <div class="modaltop" style="padding: 0;">
+                        <div class="row" style="padding-top: 5px;width:95%;text-align: center;margin:0 auto;">
+                            <div class="col-sm" style="text-align:left; padding-left: 0px;">
+                                <div class="title-head">ERROR</div>
+                            </div>
+                            <div class="col-sm" style="text-align:right;  padding-right: 0px;">
+                                <div class="modal-close">
+                                    <span onclick="closeModal4()">
+                <img src="assets/images/close.png" alt="" width="30px" height="30px">
+                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modalbody4" style="padding: 0; ">
+                        <div class="contain">
+
+                            <p>Please retry the last step<br> ERROR 419<br> Please retry<br> Please retry
+
+                            </p>
+                        </div>
+                        <div class="contain-bottom">
+                            <button type="button" class="btn btn-secondary buttoner rounded-0" onclick="closeModal4()">CLOSE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bbn-code">
+        {{pollCode}}
+    </div>
+    <div class="bbn-topic">
+        {{pollTitle}}
+    </div>
+
+    <!--<button ceiboShare  [facebook]="{u: repoUrl}">Facebook</button>
+   <button ceiboShare  [linkedIn]="{url:repoUrl}">Linkedin</button>
+   <button ceiboShare  [googlePlus]="{url:repoUrl}">Google Plus</button>
+   <button ceiboShare  [twitter]="{url:repoUrl, text:'Checkout this awesome ng2 social share directive', hashtags:'angular2, social, ceiboIT'}">Twitter</button>
+   <button ceiboShare [pinterest]="{url:repoUrl, media: imageUrl, description:'Checkout this awesome angular2 directive'}">Pinterest</button>
+-->
+    <!--<button (click)="replacingTitle();">suc</button>
+    {{message}}-->
+
+
+    <!--contestant modal-->
+    <div class="row contestant" *ngIf="content">
+        <div class="contest-frame" *ngFor="let item of contestants; let i = index; ">
+            <div class="each-image" *ngIf="item.is_evicted === false">
+                <img src="{{item.photo}}" alt="">
+                <div class="select-btn" (click)="openmodal1(item.code,item.photo)">
+                </div>
+            </div>
+
+            <div class="each-image" *ngIf="item.is_evicted === true">
+                <img src="{{item.photo}}" alt="">
+                <div class="evict-btn">
+                    <div>
+                        EVICTED
+                    </div>
+                </div>
+            </div>
+            <div class="con-details" *ngIf="item.is_evicted === false">
+                <div style=" font-family: hind bold; padding-top:10px;">
+                    {{item.first_name}}
+                </div>
+                <div style=" font-family: hind bold; font-size: 20px;">
+                    {{item.code}}
+                </div>
+                <button class="button2" (click)="openmodal1(item.code,item.photo)"> SELECT</button>
+            </div>
+            <div class="con-details" *ngIf="item.is_evicted === true">
+                <div style=" font-family: hind bold; padding-top:10px;">
+                    {{item.first_name}}
+                </div>
+                <div style=" font-family: hind bold; font-size: 20px;">
+                    {{item.code}}
+                </div>
+                <button class="button2"> SELECT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row contestant" *ngIf="loader">
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+        <div class="load-image">
+            <div class="load-gif">
+                <img src="assets/images/loader.gif">
+            </div>
+        </div>
+    </div>
+
+    <div class="notrivia" *ngIf="noTrivia">
+        SORRY, THERE ARE NO TRIVIAS THIS WEEK
+    </div>
+
+</div>
+</div>

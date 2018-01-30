@@ -1,0 +1,25 @@
+.bodyy{
+    
+    /*height: 40px;*/
+    text-align: center;
+    
+     margin:0 auto;
+     padding-top: 30px;
+     padding-bottom: 10px;
+}
+
+@media (max-width: 575px) { 
+}
+p.thick {
+    font-weight: bold;
+}
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+    padding-right:0;
+    padding-left:0;
+}
+
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}

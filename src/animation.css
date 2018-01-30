@@ -1,0 +1,157 @@
+/* animation for sidebar */
+@keyframes drop {
+    0% {
+        height: 0px;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes drop {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes closedrop {
+    0% {
+        height: 100%;
+    }
+    to {
+        height: 20px;
+    }
+}
+
+@-webkit-keyframes closedrop {
+    0% {
+        height: 100%;
+    }
+    to {
+        height: 20px;
+    }
+}
+
+/*********************/
+
+/* animation for header */
+@keyframes movein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes movein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes moveout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/*********************/
+
+/* animation for loader */
+@keyframes loading {
+    10% {
+        left: 0%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+@-webkit-keyframes loading {
+    10% {
+        left: 0%;
+    }
+    50% {
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+
+
+
+/* animation for social media */
+@keyframes open-media {
+    from {width: 1px;}
+    to {width: 150px;}
+}
+@-webkit-keyframes open-media {
+    from {width: 1px;}
+    to {width: 150px;}
+}
+
+
+
+/* animation for cart button */
+/* @keyframes cart {
+    10% {
+        background-color: rgba(233, 90, 44, .9);
+    }
+    40% {
+        background-color: rgba(233, 90, 44, .7);
+    }
+    70% {
+        background-color: rgba(233, 90, 44, .3);
+    }
+    100% {
+        background-color: rgba(233, 90, 44, .7);
+    }
+    10% {
+        background-color: rgba(233, 90, 44, .9);
+    }
+}
+
+@-webkit-keyframes cart {
+    10% {
+        background-color: rgba(233, 90, 44, .9);
+    }
+    40% {
+        background-color: rgba(233, 90, 44, .7);
+    }
+    70% {
+        background-color: rgba(233, 90, 44, .5);
+    }
+    100% {
+        background-color: rgba(233, 90, 44, .7);
+    }
+    10% {
+        background-color: rgba(233, 90, 44, .9);
+    }
+} */
+
+
+

@@ -1,0 +1,45 @@
+.footer2{
+     text-align: center;
+    background-color: rgba(34, 34, 34, .7);
+     color:	#8B898A ;
+     width:100%; 
+     margin:0 auto;
+     padding: 10px 0;
+     font-size: 10px;
+}
+
+.footer2 > div {
+	padding: 10px 0;
+}
+
+.footer-img {
+	padding: 10px;
+}
+
+.footer-img > div {
+	width: 50px;
+	margin: 0 10px;
+	display: inline-block;
+}
+
+.footer-img > div > img {
+	width: 100%;
+}
+
+.footer-approve {
+    padding: 10px;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.approve-logo {
+    margin: 0 auto;
+}
+
+.approve-logo > div {
+    width: 50px;
+    margin: 5px 0 0 0;
+    display: inline-block;
+}

@@ -1,0 +1,1371 @@
+/*global css styles*/
+@font-face {
+    font-family: "hind Medium";
+    src: url("/assets/font/hindNextLTPro-Light.otf");
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: "hind bold";
+    src: url("/assets/font/hindNextLTPro-Bold.otf");
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: "hind regular";
+    src: url("/assets/font/hindNextLTPro-Regular.otf");
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: "hind bold";
+    src: url("/assets/font/hind-bold.otf");
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: "hind light";
+    src: url("/assets/font/hind-light.otf");
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: "hind medium";
+    src: url("/assets/font/hind-medium.otf");
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: "hind regular";
+    src: url("/assets/font/hind-regular.otf");
+    font-weight: bold;
+    font-size: 20px;
+}
+
+body {
+    font-family: "hind medium";
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    background: #363636;
+    background-image: url("assets/images/bg.png");
+    background-repeat: repeat;
+}
+
+.page-lists {
+    font-family: "hind regular";
+    text-align: center;
+    margin: 0 auto;
+    font-size: 12px;
+    padding-top: 10px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .page-lists {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+        font-family: "hind regular";
+        text-align: center;
+        margin: 0 auto;
+        font-size: 12px;
+        padding-top: 10px;
+        min-height: 50px;
+        overflow: hidden;
+    }
+
+}
+
+.page-lists > ul {
+    list-style-type: none;
+    background: transparent !important;
+    padding-left: 0;
+}
+
+.page-lists > ul > li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.page-lists > ul > li:hover {
+    border-bottom: 5px solid #fff;
+    text-decoration: none;
+}
+
+.nav-menuborderbtm {
+    width: 300px;
+    overflow: hidden;
+    margin: 20px auto 0 auto;
+}
+
+.menu-word {
+    width: 50px;
+    float: left;
+    font-size: 1.5em;
+}
+
+
+.bbn-code {
+    max-width: 600px;
+    min-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2em;
+}
+
+.bbn-code > span {
+    border-bottom: 5px solid #fff;
+    font-size: 20px;
+}
+
+.bbn-code > p {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.menu-bars {
+     width: 30px;
+     height: 20px;
+    float: right;
+}
+
+.menu-bars > div {
+    width: 90%;
+    height: 5px;
+    background: #fff;
+    margin: 2px auto;
+}
+
+.menu-list {
+    padding: 5px 0;
+    width: 300px;
+    margin: 0 auto 10px auto;
+    /*display: none;*/
+}
+
+.menu-list > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.menu-list > ul > li {
+    margin: 10px 0;
+}
+
+
+@keyframes drop-down {
+    from {height: 1px;}
+    to {height: 100%;}
+}
+
+@-webkit-keyframes drop-down {
+    from {height: 1px;}
+    to {height: 100%;}
+}
+
+a:link {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:active {
+
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.bbtext {
+    text-align: center;
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
+.contestant {
+    padding: 50px 0 10px 0;
+}
+
+@media (max-width: 500px) {
+    .page-lists > ul > li {
+        width: 100%;
+    }
+
+    /* On small screens, show one logo per row */
+}
+
+.bbn-logo {
+    width: 80px;
+    margin: 0 auto;
+}
+
+.bbn-text {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3em;
+    font-family: "hind regular";
+    overflow: hidden;
+}
+
+.bbn-line {
+    height: 1px;
+    width: 80%;
+    min-width: 300px;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    margin: 0 auto 50px auto;
+}
+
+.bbn-lines {
+    height: 1px;
+    width: 100%;
+    min-width: 300px;
+    border: 5px solid #ccc;
+    margin: 0 auto 5px auto;
+    clear: both;
+}
+.current-link {
+    border-bottom: 5px solid #fff;
+}
+
+.bbn-topic {
+    text-align: center;
+    font-family: "hind bold";
+    font-size: 2em;
+    min-height: 50px;
+    text-transform: uppercase;
+}
+
+.contest-frame {
+    width: 200px;
+    display: inline-block;
+    margin: 10px auto;
+    border-radius: 4px;
+    overflow: hidden;
+
+}
+
+.each-image {
+    text-align: left;
+    margin: 0 auto;
+    background-color: #ccc;
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.notrivia {
+    font-size: 3em;
+    margin-bottom: 100px;
+}
+
+.load-image {
+    width: 200px;
+    height: 200px;
+    padding-top: 80px;
+    display: inline-block;
+    border-radius: 4px;
+    margin: 10px auto;
+    border: 1px solid #fff;
+}
+
+.load-gif {
+    text-align: center;
+}
+
+.each-image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.select-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .4);
+}
+
+.evict-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: 80px;
+    background: rgba(0, 0, 0, .7);
+}
+
+.evict-btn > div {
+    text-align: center;
+    -ms-transform: rotate(-50deg);
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    font-size: 2em;
+    color: #e60000;
+}
+
+.select-btn:hover {
+    background: rgba(0, 0, 0, .7);
+}
+
+.inner-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    text-align: center;
+}
+
+.inner-btn > span {
+    font-size: 10px;
+    font-family: "hind Medium";
+}
+
+.inner-btn > p {
+    font-size: 20px;
+    font-family: "hind bold";
+}
+
+.inner-btn > div {
+    width: 80px;
+    height: 35px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 10px;
+    background: #ccc;
+    color: #000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "hind regular";
+}
+
+.inner-btn > div:hover {
+    background-color: #fff;
+}
+
+.cover-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    z-index: 5;
+    overflow: auto;
+    display: none;
+}
+
+.product-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 6;
+    overflow: auto;
+    display: none;
+}
+
+.first-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 6;
+    overflow: auto;
+    display: none;
+}
+
+.second-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 6;
+    overflow: auto;
+    display: none;
+}
+
+.secondb-div {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 6;
+	overflow: auto;
+	display: none;
+}
+
+.third-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 6;
+    overflow: auto;
+    display: none;
+}
+
+.error-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 6;
+    overflow: auto;
+    display: none;
+}
+
+.modal-close {
+    /*width: 90%;*/
+    /*margin: 20px auto 5px auto;*/
+    color: black;
+    text-align: right;
+    cursor: pointer;
+}
+.modal-closey {
+    /*width: 90%;*/
+    /*margin: 20px auto 5px auto;*/
+    color: black;
+    text-align: right;
+    cursor: pointer;
+}
+
+.modal-close > span > a {
+    color: #fff;
+}
+
+.modal-closey > span > a {
+    color: #fff;
+}
+
+.product-content {
+    max-width: 1000px;
+    margin: 60px auto 70px auto;
+    padding: 0 10px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.product-image {
+    overflow: hidden;
+    background: #f8f8f8;
+    margin: 0 auto;
+}
+
+.product-image > img {
+    width: 100%;
+}
+
+@media (max-width: 575px) {
+
+}
+
+p.thick {
+    font-weight: bold;
+}
+
+.modal-header {
+    color: black;
+    background-color: white;
+    height: 50px;
+
+}
+
+.modal-title {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.modal-body {
+    color: white;
+    background-color: #464646;
+    height: 200px;
+}
+
+.modal-footer {
+    color: black;
+}
+
+.buttoner {
+
+    width: 100%;
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+
+.buttoners {
+
+    width: 95%;
+    color: white;
+    background-color: black;
+    border-color: black;
+}
+
+.per {
+    width: 97%;
+    padding-left: 13px;
+
+}
+
+.modaltop {
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 0;
+    display: block;
+    color: black;
+    height: 40px;
+}
+
+/*noinspection ALL*/
+.modalbody {
+    background-color: #464646;
+    width: 50%;
+    /*height: 300px;*/
+    color: white;
+    margin: 0 auto;
+    margin-top: 0;
+    vertical-align: top;
+    height: auto;
+
+}
+
+.modalbody1 {
+    background-color: #464646;
+    width: 50%;
+    color: white;
+    margin: 0 auto;
+    margin-top: 0;
+    vertical-align: top;
+    height: auto;
+}
+
+.modalbody2 {
+    background-color: #464646;
+    width: 50%;
+
+    color: white;
+    margin: 0 auto;
+    margin-top: 0;
+    vertical-align: top;
+    height: auto;
+
+}
+
+.modalbody4 {
+    background-color: #464646;
+    width: 50%;
+    color: white;
+    margin: 0 auto;
+    margin-top: 0;
+    vertical-align: top;
+    height: auto;
+}
+
+.title-head {
+    display: inline;
+    font-size: 24px;
+    padding-top: 4px;
+}
+.title-heads {
+    display: inline;
+    /*font-size: 24px;*/
+    padding-top: 4px;
+}
+
+.contain {
+    padding-top: 10px;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.contain-bottom {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.poll {
+    width: 100px;
+    height: 20px;
+    float: left;
+    font-size: 12px;
+    text-align: left;
+}
+
+.date {
+    width: 200px;
+    height: 20px;
+    float: right;
+    font-size: 12px;
+    text-align: right;
+}
+
+.poll-desc {
+    text-align: left;
+}
+
+.poll-desc > span {
+    font-size: 16px;
+    font-family: "hind bold";
+}
+
+.poll-desc > p {
+    font-size: 12px;
+    font-family: "hind Medium";
+}
+
+.prize-frame {
+    max-width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.pf-top {
+    height: 50px;
+    color: #000;
+    text-align: center;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-family: "hind bold";
+    font-size: 12px;
+}
+
+.pf-middle {
+    width: 100px;
+    margin: 0 auto;
+    height: 100px;
+}
+
+.pf-middle > img {
+    width: 100%;
+    height: 100%;
+}
+
+.pf-btm {
+    height: 50px;
+    color: #000;
+    text-align: center;
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-family: "hind regular";
+    font-size: 12px;
+}
+
+.header-section {
+    font-size: 2em;
+    margin-bottom: 50px;
+    font-family: "hind bold";
+}
+
+
+.tac-section {
+    font-size: 16px;
+    font-family: "hind medium";
+    text-align: left;
+}
+
+.tac-section > div > span {
+    font-size: 14px;
+    font-family: "hind regular";
+}
+
+.tac-section > div > p {
+    font-size: 12px;
+    font-family: "hind Medium";
+}
+
+.about-section > div > p {
+    font-size: 16px;
+    font-family: "hind Medium";
+}
+
+.tac-section > div > ul {
+    font-size: 12px;
+    font-family: "hind Medium";
+    list-style-type: decimal;
+}
+
+
+.tac-section > div > ul > li {
+    margin: 5px 0;
+}
+
+.faq-section {
+    font-size: 16px;
+
+    font-family: "hind medium";
+    text-align: left;
+
+}
+
+.faq-question {
+    margin-bottom: 50px;
+    min-height: 100px;
+}
+
+.faq-question > span {
+    font-size: 18px;
+    font-family: "hind bold";
+}
+
+.faq-question > p {
+    font-size: 12px;
+    font-family: "hind Medium";
+}
+
+.winner-frame {
+    width: 200px;
+    margin: 0 auto 10px auto;
+}
+
+.winner-number {
+    background: #fff;
+    text-align: left;
+    min-height: 200px;
+}
+
+.winner-number > p {
+  padding-top: 10px;
+  text-align: center;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.winner-number > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.winner-number > ul > li {
+    display: inline-block;
+    margin: 7px;
+    text-align: center;
+    font-family: "hind bold";
+    color: #000;
+    font-size: 20px;
+}
+
+.winner-img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.winner-img > img {
+    width: 100%;
+    height: 100%;
+}
+
+.winner-bg {
+    width: 200px;
+    height: 80px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding-top: 20px;
+}
+
+.winner-bg > span {
+    font-size: 16px;
+    font-family: "hind bold";
+    color: #000;
+}
+
+.winner-bg > p {
+    font-size: 12px;
+    font-family: "hind bold";
+    color: #000;
+}
+
+.other-trivia {
+    background: #fff;
+    text-align: left;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    color: #000;
+    margin-top: 50px;
+}
+
+.other-trivia > div  {    
+    text-align: left;
+}
+
+.other-trivia > div > span {    
+    font-size: 12px;
+    border-bottom: 5px solid #000;
+}
+
+.other-trivia > div > p {    
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.other-btn {
+    height: 40px;
+    text-align: center!important;
+    color: #fff;
+    padding-top: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    background: #000;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.other-btn:hover {
+    background-color: #222;
+}
+
+@media (max-width: 500px) {
+    .modalbody {
+        background-color: #464646;
+        width: 50%;
+        /* height: 300px; */
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+    }
+
+    .title-head {
+        display: inline;
+        font-size: 16px;
+    }
+
+    .modalbody1 {
+        background-color: #464646;
+        width: 50%;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+    }
+
+    .modalbody2 {
+        background-color: #464646;
+        width: 50%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .modalbody4 {
+        background-color: #464646;
+        width: 50%;
+        /*height: 300px;*/
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+    }
+}
+
+@media (max-width: 360px) {
+    .modalbody {
+        background-color: #464646;
+        width: 50%;
+        /* height: 300px; */
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+    }
+
+    .title-head {
+        display: inline;
+        font-size: 16px;
+    }
+
+    .modalbody1 {
+        background-color: #464646;
+        width: 50%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .modalbody2 {
+        background-color: #464646;
+        width: 50%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .modalbody4 {
+        background-color: #464646;
+        width: 50%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+}
+
+@media (max-width: 375px) {
+    .contain {
+    padding-top: 10px;
+    width: 95%;
+    text-align: left;
+    margin: 0 auto;
+
+}
+   .contains {
+    padding-top: 10px;
+    width: 95%;
+    text-align: left;
+    margin: 0 auto;
+
+}
+    .modaltop {
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 0;
+    display: block;
+    color: black;
+    height: 40px;
+}
+    .modalbody {
+        background-color: #464646;
+        width: 100%;
+        /* height: 300px; */
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .title-head {
+        display: inline;
+        font-size: 13px;
+    }
+
+    .modalbody1 {
+        background-color: #464646;
+        width: 100%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .modalbody2 {
+        background-color: #464646;
+        width: 100%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .modalbody4 {
+        background-color: #464646;
+        width: 100%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .product-content {
+        max-width: 1200px;
+        margin: 100px auto 70px auto;
+        padding: 0 10px;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .modal-close {
+        color: black;
+        text-align: right;
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        padding-left: 40px;
+    }
+    .modal-closey {
+        color: black;
+        text-align: right;
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        padding-left: 290px;
+    }
+}
+
+.con-details {
+    font-family: "hind light";
+    background-color: white;
+    height: auto;
+    color: black;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.button2 {
+    width: 80px;
+    height: 35px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: center;
+    /*padding-top: 10px;*/
+    background: black;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "hind medium";
+    border-width: 1px;
+    font-family: "hind light";
+
+}
+
+.form-control:focus {
+    border-color: transparent;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 255, 255, .4);
+}
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper input {
+    padding-left: 48px;
+}
+
+.wrapper span {
+    position: absolute;
+    left: 30px;
+    top: 5px;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+  .contains {
+    padding-top: 10px;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+@media (max-width: 414px) {
+    .middle{
+        text-align: center;
+    }
+    .contain {
+    padding-top: 10px;
+    width: 95%;
+    text-align: left;
+    margin: 0 auto;
+
+}
+   .contains {
+    padding-top: 10px;
+    width: 95%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+    .modaltop {
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 0;
+    display: block;
+    color: black;
+    height: 40px;
+}
+    .modalbody {
+        background-color: #464646;
+        width: 100%;
+        /* height: 300px; */
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .title-head {
+        display: inline;
+        font-size: 13px;
+    }
+
+    .modalbody1 {
+        background-color: #464646;
+        width: 100%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .modalbody2 {
+        background-color: #464646;
+        width: 100%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .modalbody4 {
+        background-color: #464646;
+        width: 100%;
+        height: 300px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 0;
+        vertical-align: top;
+        height: auto;
+
+    }
+
+    .product-content {
+        max-width: 1200px;
+        margin: 100px auto 70px auto;
+        padding: 0 10px;
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    .modal-close {
+        color: black;
+        text-align: right;
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        padding-left: 40px;
+    }
+    .modal-closey {
+        color: black;
+        text-align: right;
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        padding-left: 290px;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+.help-block {
+    font-size: 12px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.win-div {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+    background: #fff;
+    height: 250px;
+}
+
+.win-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.win-detail {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    padding: 0 10px;
+    color: #000;
+    font-size: 2em;
+}
+
+.win-detail > p {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+
+.win-intro {
+    text-align: left;
+    font-size: 14px;
+}
+
+.winner-title {
+    width: 180px;
+    float: left;
+    font-size: 10px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;    
+}
+
+.winner-data {
+    width: 120px;
+    float: right;
+    font-size: 10px;
+    text-align: right;
+}
+
+.contact-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+
+.contact-icons {
+    background: #fff;
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+.contact-details {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.contact-details > div {
+    width: 50px;
+    margin: 0 auto;
+}
+
+.contact-details > p {
+    margin: 0 auto;
+    color: #000;
+    font-size: 20px;
+}
+
+.success-table {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #000;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.success-table > table {
+    width: 100%;
+}
+
+.success-table > table > tbody {
+}
+
+.success-table > table > tbody > tr > {
+    background-color: green;
+}
+
+.success-table > table > tbody > tr > td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}

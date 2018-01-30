@@ -1,0 +1,68 @@
+<div class="container">
+
+    <div class="header-section">
+        <span style="border-bottom: 5px solid #fff;">PRIZES</span>
+    </div>
+
+    <div style="height: 200px;" *ngIf="priceLoader">
+        Fetching prize list...
+    </div>
+
+    <div *ngIf="!priceLoader">
+        <div *ngFor="let item of prizes; let i = index;" style="margin-bottom: 50px;">
+            <div class="poll">
+                Poll {{item.id}}
+            </div>
+            <div class="date">
+                {{item.start_date}} - {{item.end_date}}
+            </div>
+            <div class="bbn-lines"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="poll-desc">
+                            <span>TITLE</span>
+                            <p>{{item.title}}</p>
+                            <span>DESCRIPTION</span>
+                            <p>
+                                {{item.description}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col" *ngFor="let prizedetails of item.prizes | sortnumber">      
+
+                                <div class="prize-frame" *ngIf="prizedetails.cash_prize !== null">
+                                    <div class="pf-top">
+                                        {{prizedetails.prize_type.title}}
+                                    </div>
+                                    <div class="pf-middle">
+                                        <img src="assets/images/cash.png" alt="">
+                                    </div>
+                                    <div class="pf-btm">
+                                            &#8358;{{prizedetails.cash_prize}}
+                                    </div>
+                                </div>
+
+                                <div class="prize-frame" *ngIf="prizedetails.cash_prize === null">
+                                        <div class="pf-top">
+                                            {{prizedetails.prize_type.title}}
+                                        </div>
+                                        <div class="pf-middle">
+                                            <img src="{{prizedetails.product_image}}" alt="">
+                                        </div>
+                                        <div class="pf-btm">
+                                                {{prizedetails.product_name}}
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

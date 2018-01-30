@@ -1,0 +1,29 @@
+<div class="col-12" style="width:400px; margin:0 auto;">
+    <h5>LOGIN</h5>
+    
+        <div  class="form-group">
+            <div for="username" style="text-align: left;">
+                Email
+            </div>
+            <input type="text" class="form-control" name="email"  #email required />
+            <div *ngIf="errormessage" style="color:red">{{emailError}}</div>
+            <div *ngIf="!errormessage"></div>
+            <!--<div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>-->
+        </div>
+        <div class="form-group" >
+            <div for="password" style="text-align: left;">
+                Password
+            </div>
+            <input type="password" class="form-control" name="password" #password required />
+            <div *ngIf="errormessage2" style="color:red">{{passwordError}}</div>
+            <div *ngIf="!errormessage2"></div>
+            <!--<div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>-->
+        </div>
+        <div class="form-group">
+            <button  class="btn btn-primary" (click)="login(email,password)">LOGIN</button>
+            <a [routerLink]="['/register']" class="btn btn-link">REGISTER</a>
+        </div>
+        <div *ngIf="errormessage3" style="color: red">{{authError}}</div>
+        <div *ngIf="!errormessage3"></div>
+    
+</div>

@@ -1,0 +1,42 @@
+
+
+<div class="container">
+    <div class="box-section">
+        <div class="header-section">
+            <span style="border-bottom: 5px solid #fff;">WINNERS</span>
+        </div>
+
+         <div style="height: 200px;" *ngIf="winnersLoader">
+            Fetching Winners List...
+        </div>
+
+
+
+        <div *ngIf="!winnersLoader">
+            <div *ngFor="let items of data; ">
+                <div>
+                    <div class="winner-title">
+                        {{items.title}}
+                    </div>
+                    <div class="winner-data">
+                        {{items.start_date}} - {{items.end_date}}
+                    </div>
+                </div>
+                <div class="bbn-lines"></div>
+                <div class="row" >
+                    <div class="col-md-4" *ngFor="let data of items.prizes  | sortnumber">
+                        <div class="winner-number">
+                            <p>
+                                {{data.prize_type}}
+                            </p>
+                            <ul>
+                                <li> {{data.winners | hidenumber}} </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

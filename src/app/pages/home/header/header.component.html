@@ -1,0 +1,89 @@
+<div class="bbtext">
+    <div class="bbn-logo">
+        <img src="/assets/images/eye.png" alt="">
+    </div>
+    <div class="bbn-text">
+        <a href="index.html">BBN  TRIVIA</a>
+    </div>
+</div>
+<div class="page-lists">
+    <ul>
+        <li routerLinkActive="current-link" [routerLinkActiveOptions]="{exact: true}">
+            <a [routerLink]="['/']">HOME</a>
+        </li>
+        <li routerLinkActive="current-link">
+            <a [routerLink]="['/about']">ABOUT BBN TRIVIA</a>
+        </li>
+        <li routerLinkActive="current-link">
+            <a [routerLink]="['/winners']">WINNERS</a>
+        </li>
+        <li routerLinkActive="current-link">
+            <a [routerLink]="['/prizes']"> PRIZES</a>
+        </li>
+        <li routerLinkActive="current-link">
+            <a [routerLink]="['/others']">OTHER TRIVIAS</a>
+        </li>
+        <li routerLinkActive="current-link">
+            <a [routerLink]="['/agents']">AGENTS</a>
+        </li>
+        
+        <!-- <li routerLinkActive="current-link">
+            <a>AGENTS LOCATION</a>
+        </li> -->
+        <li routerLinkActive="current-link">
+            <a [routerLink]="['/faq']"> FAQs</a>
+        </li>
+        <li routerLinkActive="current-link">
+            <a [routerLink]="['/win']">HOW TO WIN</a>
+        </li>
+        <li routerLinkActive="current-link">
+                <a [routerLink]="['/contact']">CONTACT</a>
+        </li>
+    </ul>
+</div>
+<div class="mobile-menu">
+    <div class="nav-menuborderbtm" (click)="openMobileMenu()">
+        <div class="menu-word">
+            MENU
+        </div>
+        <div class="menu-bars">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="menu-list" *ngIf="mobileMenu">
+        <ul>
+            <li routerLinkActive="current-link" [routerLinkActiveOptions]="{exact: true}">
+                <a [routerLink]="['/']">HOME</a>
+            </li>
+            <li routerLinkActive="current-link">
+                <a [routerLink]="['/about']">ABOUT BBN TRIVIA</a>
+            </li>
+            <li routerLinkActive="current-link">
+                <a [routerLink]="['/winners']">WINNERS</a>
+            </li>
+            <li routerLinkActive="current-link">
+                <a [routerLink]="['/prizes']"> PRIZES</a>
+            </li>
+            <li routerLinkActive="current-link">
+                <a [routerLink]="['/others']">OTHER TRIVIAS</a>
+            </li>
+            
+            <li routerLinkActive="current-link">
+                <a [routerLink]="['/agents']">AGENTS</a>
+            </li>
+            <li routerLinkActive="current-link">
+                <a [routerLink]="['/faq']"> FAQs</a>
+            </li>
+            <li routerLinkActive="current-link">
+                    <a [routerLink]="['/win']">HOW TO WIN</a>
+                </li>
+                <li routerLinkActive="current-link">
+                        <a [routerLink]="['/contact']">CONTACT</a>
+                </li>
+        </ul>
+    </div>
+</div>
+
+<div class="bbn-line"></div>

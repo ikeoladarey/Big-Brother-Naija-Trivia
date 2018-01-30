@@ -1,0 +1,26 @@
+.footy{
+    text-align: center;
+     width:100%; 
+     margin:0 auto;
+     padding-top: 50px;
+     padding-bottom: 50px;
+}
+
+
+.separator{
+     color:white;
+     width:60%; 
+     margin:0 auto;
+     align: center;
+     border-color: white;
+}
+
+hr{
+    border-color:white;
+}
+.footer-details{
+     max-width:600px;
+     min-width: 300px; 
+     margin:0 auto;
+      text-align: center;
+}

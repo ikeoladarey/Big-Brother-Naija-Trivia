@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="box-section">
+
+        	<div class="header-section">
+            	<span style="border-bottom: 5px solid #fff;">OTHER TRIVIAS</span>
+			</div>		
+						
+				<div class="row">
+						  <div class="col-md-4" *ngFor="let oth of details">
+							  <div class="other-trivia">
+									<div>
+											<span>
+												WEEK
+											</span>
+											<p>
+												{{oth.week}}
+											</p>
+										</div>	
+								 
+								  <div>
+										<span>
+											TRIVIA CODE
+										</span>
+										<p>
+											{{oth.code}}
+										</p>
+									</div>	
+								<div>
+									<span>
+										TRIVIA QUESTION
+									</span>
+									<p>
+										{{oth.title}}
+									</p>
+								</div>
+								<div class="other-btn"  [routerLink]="['/home',oth.code]">
+									VIEW TRIVIA
+								</div>									  
+							  </div>
+						  </div>
+				</div>
+						  
+        <div  *ngIf="loader" style="text-align: center;height: 200px;">			
+            Fetching Other Trivias.....
+        </div>
+
+        <div  *ngIf="noTrivia" style="text-align: center;height: 200px;font-size: 2em">			
+            THERE ARE NO TRIVIAS 
+        </div>
+    
+</div>
